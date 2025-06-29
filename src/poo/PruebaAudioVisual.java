@@ -3,14 +3,17 @@ package poo;
 import uni1a.*;
 
 public class PruebaAudioVisual {
+
     public static void main(String[] args) {
         System.out.println("Hello from Eclipse!");
 
-        // Crear instancias de las subclases
-        ContenidoAudiovisual[] contenidos = new ContenidoAudiovisual[3];
-        contenidos[0] = new Pelicula("Avatar", 125, "Accion", "20th Century Studios");
+        // Crear instancias de contenido audiovisual
+        ContenidoAudiovisual[] contenidos = new ContenidoAudiovisual[5];
+        contenidos[0] = new Pelicula("Avatar", 125, "Acción", "20th Century Studios");
         contenidos[1] = new SerieDeTV("Game of Thrones", 60, "Fantasy", 8);
         contenidos[2] = new Documental("Cosmos", 45, "Science", "Astronomy");
+        contenidos[3] = new VideoYouTube("Java Básico", 12, "Educación", "CodeMaster", 1000);
+        contenidos[4] = new Cortometraje("Luz", 18, "Drama", "Ana Pérez");
 
         // Relación Actor - Película
         Actor actor1 = new Actor("Emma Stone", 34, "EE.UU.", "Protagonista");
@@ -24,7 +27,7 @@ public class PruebaAudioVisual {
         Investigador inv = new Investigador("Carl Sagan", "NASA", "Astronomía", 20);
         ((Documental) contenidos[2]).setInvestigador(inv);
 
-        // Mostrar los detalles de cada contenido audiovisual
+        // Mostrar detalles de cada contenido
         for (ContenidoAudiovisual contenido : contenidos) {
             mostrarDetalles(contenido);
             System.out.println();
@@ -36,6 +39,7 @@ public class PruebaAudioVisual {
         System.out.println("Título: " + contenido.getTitulo());
         System.out.println("Duración: " + contenido.getDuracionEnMinutos() + " minutos");
         System.out.println("Género: " + contenido.getGenero());
+
         if (contenido instanceof Pelicula) {
             Pelicula peli = (Pelicula) contenido;
             System.out.println("Estudio: " + peli.getEstudio());
@@ -56,6 +60,13 @@ public class PruebaAudioVisual {
             if (doc.getInvestigador() != null) {
                 System.out.println("Investigador: " + doc.getInvestigador());
             }
+        } else if (contenido instanceof VideoYouTube) {
+            VideoYouTube video = (VideoYouTube) contenido;
+            System.out.println("Canal: " + video.getCanal());
+            System.out.println("Likes: " + video.getLikes());
+        } else if (contenido instanceof Cortometraje) {
+            Cortometraje corto = (Cortometraje) contenido;
+            System.out.println("Director: " + corto.getDirector());
         }
     }
 }
