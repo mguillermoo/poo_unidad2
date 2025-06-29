@@ -16,6 +16,14 @@ public class PruebaAudioVisual {
         Actor actor1 = new Actor("Emma Stone", 34, "EE.UU.", "Protagonista");
         ((Pelicula) contenidos[0]).agregarActor(actor1);
 
+        // Relación Temporada - SerieDeTV
+        Temporada t1 = new Temporada(1, 10, 2011, "La guerra comienza");
+        ((SerieDeTV) contenidos[1]).agregarTemporada(t1);
+
+        // Relación Investigador - Documental
+        Investigador inv = new Investigador("Carl Sagan", "NASA", "Astronomía", 20);
+        ((Documental) contenidos[2]).setInvestigador(inv);
+
         // Mostrar los detalles de cada contenido audiovisual
         for (ContenidoAudiovisual contenido : contenidos) {
             mostrarDetalles(contenido);
@@ -34,6 +42,19 @@ public class PruebaAudioVisual {
             System.out.println("Actores:");
             for (Actor a : peli.getActores()) {
                 System.out.println("  - " + a);
+            }
+        } else if (contenido instanceof SerieDeTV) {
+            SerieDeTV serie = (SerieDeTV) contenido;
+            System.out.println("Temporadas (cantidad): " + serie.getTemporadas());
+            System.out.println("Detalles de temporadas:");
+            for (Temporada t : serie.getTemporadasLista()) {
+                System.out.println("  - " + t);
+            }
+        } else if (contenido instanceof Documental) {
+            Documental doc = (Documental) contenido;
+            System.out.println("Tema: " + doc.getTema());
+            if (doc.getInvestigador() != null) {
+                System.out.println("Investigador: " + doc.getInvestigador());
             }
         }
     }
