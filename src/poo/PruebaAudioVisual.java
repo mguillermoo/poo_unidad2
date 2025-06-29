@@ -5,7 +5,6 @@ import uni1a.*;
 public class PruebaAudioVisual {
 
     public static void main(String[] args) {
-        System.out.println("Hello from Eclipse!");
 
         // Crear instancias de contenido audiovisual
         ContenidoAudiovisual[] contenidos = new ContenidoAudiovisual[5];
@@ -35,6 +34,20 @@ public class PruebaAudioVisual {
     }
 
     public static void mostrarDetalles(ContenidoAudiovisual contenido) {
+        if (contenido instanceof Pelicula) {
+            System.out.println("---- Película ----");
+        } else if (contenido instanceof SerieDeTV) {
+            System.out.println("---- Serie de TV ----");
+        } else if (contenido instanceof Documental) {
+            System.out.println("---- Documental ----");
+        } else if (contenido instanceof VideoYouTube) {
+            System.out.println("---- Video YouTube ----");
+        } else if (contenido instanceof Cortometraje) {
+            System.out.println("---- Cortometraje ----");
+        } else {
+            System.out.println("---- Contenido Audiovisual ----");
+        }
+
         System.out.println("ID: " + contenido.getId());
         System.out.println("Título: " + contenido.getTitulo());
         System.out.println("Duración: " + contenido.getDuracionEnMinutos() + " minutos");
@@ -68,5 +81,7 @@ public class PruebaAudioVisual {
             Cortometraje corto = (Cortometraje) contenido;
             System.out.println("Director: " + corto.getDirector());
         }
+        System.out.println();
     }
+
 }
