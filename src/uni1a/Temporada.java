@@ -29,6 +29,22 @@ public class Temporada {
         return sinopsis;
     }
 
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public void setEpisodios(int episodios) {
+        this.episodios = episodios;
+    }
+
+    public void setAñoEstreno(int añoEstreno) {
+        this.añoEstreno = añoEstreno;
+    }
+
+    public void setSinopsis(String sinopsis) {
+        this.sinopsis = sinopsis;
+    }
+
     @Override
     public String toString() {
         return "T" + numero + " (" + añoEstreno + "): " + episodios + " episodios - " + sinopsis;

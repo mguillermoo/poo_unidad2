@@ -29,6 +29,22 @@ public class Investigador {
         return añosExperiencia;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setInstitucion(String institucion) {
+        this.institucion = institucion;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+
+    public void setAñosExperiencia(int añosExperiencia) {
+        this.añosExperiencia = añosExperiencia;
+    }
+
     @Override
     public String toString() {
         return nombre + " (" + especialidad + ", " + añosExperiencia + " años) - " + institucion;

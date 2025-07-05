@@ -12,6 +12,10 @@ public class Cortometraje extends ContenidoAudiovisual {
         return director;
     }
 
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
     @Override
     public void mostrarDetalles() {
         System.out.println("Cortometraje:");

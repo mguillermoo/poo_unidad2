@@ -18,11 +18,18 @@ public class VideoYouTube extends ContenidoAudiovisual {
         return likes;
     }
 
+    public void setCanal(String canal) {
+        this.canal = canal;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
     @Override
     public void mostrarDetalles() {
         System.out.println("Video YouTube:");
         System.out.println("Título: " + getTitulo() + ", Duración: " + getDuracionEnMinutos() + " min, Canal: " + canal
                 + ", Likes: " + likes);
     }
-
 }

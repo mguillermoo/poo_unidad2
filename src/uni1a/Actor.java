@@ -29,6 +29,22 @@ public class Actor {
         return personaje;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
+
+    public void setPersonaje(String personaje) {
+        this.personaje = personaje;
+    }
+
     @Override
     public String toString() {
         return nombre + " (" + edad + " años) - " + personaje + " [" + nacionalidad + "]";
